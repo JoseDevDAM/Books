@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "@capacitor/camera": "^4.1.5",
+    "@ionic/angular": "^8.4.0",
+    "@ionic/pwa-elements": "^3.3.0"
+  }
+}

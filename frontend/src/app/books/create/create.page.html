@@ -1,0 +1,61 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Creacion de Libros</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+<app-header></app-header> 
+
+<ion-content> 
+
+  <ion-card-header>
+    <ion-card-title>Creacion de Libros</ion-card-title>
+  </ion-card-header>  
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="primary" fill="outline" (click)="takePhoto()">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Take a photo
+        </ion-button>
+        <ion-button color="primary" fill="outline" (click)="pickImage()">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Pick an image
+        </ion-button>
+        <ion-button color="danger" fill="outline" (click)="discardImage()">
+          <ion-icon slot="start" name="aperture"></ion-icon>
+          Discard image
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list lines="full">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <ion-item lines="full">
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input formControlName="title" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Autor</ion-label>
+        <ion-input formControlName="author" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-row> 
+        <ion-col width-50>
+          <ion-button type="submit" color="light" expand="block"> Añadir </ion-button>
+        </ion-col>
+        <ion-col width-50>
+          <ion-button (click)="goBack()" expand="block">Volver</ion-button>
+        </ion-col>
+      </ion-row>      
+    </form>   
+     
+  </ion-list>
+</ion-content>

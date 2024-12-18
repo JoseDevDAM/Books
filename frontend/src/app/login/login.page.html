@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img src="assets/book.png" alt="book-log">
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Book Service</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="usuario"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input placeholder="contraseña" type="password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button (click)="logMeIn()" shape="round">Entra</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

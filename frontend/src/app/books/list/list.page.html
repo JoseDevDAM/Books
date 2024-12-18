@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <ion-card-header>
+    <ion-card-title>Listado de libros</ion-card-title>
+    
+    <ion-card-subtitle></ion-card-subtitle>
+  </ion-card-header>
+
+  
+   <ion-grid>
+  
+  
+  <ion-accordion-group *ngFor="let i of books;">
+    <ion-accordion value="first" >
+      <ion-item slot="header" color="light">
+        <ion-label>
+
+
+
+
+
+
+
+         
+            <ion-row >
+              
+              <ion-col size="2" >
+               <ion-card-content>
+                  <ion-avatar>
+                    <img *ngIf="i.filename" src="http://localhost:8080/images/{{i.filename}}" alt="image"/>
+                  </ion-avatar>
+                
+                  
+                </ion-card-content>
+              </ion-col>
+
+              
+              <ion-col size="6">
+                
+                <div>
+                  <h1>Titulo: {{i.title}} <br /><br /> Autor: {{i.author}}</h1>
+               </div>
+              
+              </ion-col>
+             
+              
+              <ion-col size="2">
+                <ion-button type="ios" color="danger"  (click)="presentAlert(i.id, i.title)"> 
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+        
+              <ion-col size="2">
+                <ion-button type="ios" 
+                  color="secondary" 
+                  [routerLink]="['/update/']"
+                  [queryParams]="{ id: i.id }">
+                <ion-icon name="open-outline"></ion-icon>
+                </ion-button> 
+              </ion-col>
+        
+            </ion-row>
+          
+
+
+
+
+        </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content"><img *ngIf="i.filename" src="http://localhost:8080/images/{{i.filename}}" alt="image"/></div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+
+</ion-grid>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addBook()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
